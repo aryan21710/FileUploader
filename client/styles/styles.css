@@ -1,0 +1,30 @@
+@import './base/_setting.scss';
+@import './base/_base.scss';
+@import './components/_landingPage.scss';
+@import './components/_loginSection.scss';
+@import './components/_loginWindow.scss';
+@import './components/_lawyerSection.scss';
+@import './components/_clientSection.scss';
+@import './components/_clientDashboard.scss';
+@import './components/_header.scss';
+@import './components/_input.scss';
+@import './components/_navbar.scss';
+@import './components/_notifications.scss';
+@import './components/_mycases.scss';
+@import './components/_mydocuments.scss';
+@import './components/_newsubmission.scss';
+@import './components/_react-sidenav.scss';
+@import './components/_petitionerSection.scss';
+@import './components/_respondentSection.scss';
+@import './components/_uploadDocumentsSection.scss';
+@import './components/_enterDetails.scss';
+@import './components/_customTImePicker.scss';
+@import './components/_listofcases.scss';
+@import './components/_allcases.scss';
+@import './components/_displaycaseinfo.scss';
+@import './components/_allcaseinfo.scss';
+@import './components/_uploadDocumentsContainer.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');

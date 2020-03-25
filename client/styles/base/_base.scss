@@ -1,0 +1,86 @@
+html {
+    font-size: 62.5%; //#KEYWORDS:- [rem to px conversion] THIS WILL MAKE 1rem=10px;
+    height: 100%
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+   height: 100%;
+   background-color: black
+}
+
+.flexStyling {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activeHeader {
+    background: $white06;
+    color: $black;
+    border-top: 4px solid $lightblacka06;
+}
+
+.inactiveHeader {
+    background: $lightblacka06;
+    color: $white;
+    border-top: 0px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px $oneTwenty inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.srv-validation-message {
+    font-size: $fontSize15rem;
+    color: red;
+    animation: blink 1s 4 ease-in-out;
+  }
+
+
+  @keyframes blink {
+      0% {
+          opacity: 0 ;
+
+      }
+
+      100% {
+        opacity: 1;
+      }
+
+
+  }
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .activeHeader {
+        background: $white06;
+        color: $black;
+        border-top: 4px solid $lightblacka06
+    }
+    
+    .inactiveHeader {
+        background: $lightblacka06;
+        color: $white;
+        border-top: 0px;
+    }
+
+}

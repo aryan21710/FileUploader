@@ -1,0 +1,60 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2
+            ,
+            {"SwitchCase": 1} // FOR SWITCH STATEMENTS IN THE CODE.
+        ],
+        "no-console": [
+            "error"
+        ],
+        "semi" : [
+            0
+        ],
+        "linebreak-style" : [
+            "error",
+            "unix"
+        ],
+        "no-empty" : ["error"],
+        "react/prop-types": [1, {
+            "ignore": ["className", "children", "location", "params", "location*"]
+          }],
+          "no-param-reassign": [0, {
+            "props": false
+          }],
+          "prefer-rest-params": 1,
+          "arrow-body-style": 0,
+          "prefer-template": 0,
+          "react/prefer-stateless-function": 1,
+          "react/jsx-no-bind": [0, {
+            "ignoreRefs": false,
+            "allowArrowFunctions": false,
+            "allowBind": true
+          }]
+    }
+}
