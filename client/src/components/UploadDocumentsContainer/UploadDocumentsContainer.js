@@ -8,7 +8,6 @@ const UploadDocumentsContainer = () => {
   const [file, setFile] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
-
   const onChangeFile = event => {
     console.log("event.target.files", event.target.files[0]);
 
@@ -34,7 +33,7 @@ const UploadDocumentsContainer = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9001/client/public/uploads",
+        "/uploads",
         formData,
         {
           headers: {
@@ -48,7 +47,6 @@ const UploadDocumentsContainer = () => {
               )
             );
 
-            // Clear percentage
             setTimeout(() => setUploadPercentage(0), 10000);
           }
         }
@@ -60,31 +58,18 @@ const UploadDocumentsContainer = () => {
       filePath = filePath.split(",");
       console.log("fileName", fileName);
       console.log("filePath", filePath);
+      console.log("response back from server:-", fileName, " AND ", filePath);
 
-      setDisplayFile(displayFile => [...displayFile, ...fileName]);
+      setDisplayFile(displayFile => [...displayFile, ...filePath]);
       console.log(
         "displayFile from the server",
         displayFile,
         ":",
         displayFile.length
       );
-      console.log("response back from server:-", fileName, " AND ", filePath);
-
-      // const importAll = r => {
-      //   return r.keys().map(r);
-      // };
-
-      // setImages(
-      //   importAll(
-      //     require.context(
-      //       "./../../../../../../../public/uploads/",
-      //       false,
-      //       /\.(png|jpeg|svg|jpg)$/
-      //     )
-      //   )
-      // );
     } catch (error) {
-      if (error.response.status == 500) {
+      console.log("error back from server:-", error);
+      if (error.response.status === 500) {
         console.log("There was a problem with the server");
       } else {
         console.log(error.response.data.msg);
@@ -94,19 +79,27 @@ const UploadDocumentsContainer = () => {
 
   const DisplayFile = () => {
     console.log("displayFile", displayFile);
-    console.log("uploadPercentage", uploadPercentage);
+    console.log("uploadPercentage!!", uploadPercentage);
+
     return (
       <div className="displayFileContainer">
         {displayFile.length > 0
           ? displayFile.map((_, idx) => {
-              const myimg = require(`./../../../public/uploads/${_}`)
-                .default;
-              console.log("myimg", myimg);
-              return (
-                <div className="fileDimension" key={idx}>
-                  <img src={myimg} />
-                </div>
-              );
+              try {
+
+                return (
+                  <div className="fileDimension" key={idx}>
+                    <img src={_} alt="myimg" />
+                  </div>
+                );
+              } catch (err) {
+                console.log("err", err);
+                return (
+                  <div className="fileDimension" key={idx}>
+                    <p>ERROR OCCURED</p>
+                  </div>
+                );
+              }
             })
           : null}
       </div>
@@ -144,7 +137,6 @@ const UploadDocumentsContainer = () => {
           </form>
         </div>
       </div>
-  
     </div>
   );
 };

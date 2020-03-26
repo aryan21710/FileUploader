@@ -1,10 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "normalize.css/normalize.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "../styles/styles.css";
-import UploadDocumentsContainer from './components/UploadDocumentsContainer/UploadDocumentsContainer'
+import UploadDocumentsContainer from "./components/UploadDocumentsContainer/UploadDocumentsContainer";
+import '../src/styles/components/uploadDocumentsContainer.css'
 
+const App = () => (
+  <React.Fragment>
+    <UploadDocumentsContainer />
+  </React.Fragment>
+);
 
-
-ReactDOM.render(<UploadDocumentsContainer />, document.getElementById("root"));
+export default App;

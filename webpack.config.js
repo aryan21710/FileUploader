@@ -40,15 +40,19 @@ module.exports = () => {
         {
           loader: "babel-loader",
           test: /\.js$/,
-          exclude: /node_modules/
-        },
+          exclude: /node_modules/,
+          query: {compact: false}      
+          },
         {
           test: /\.s?css$/,
           use: ["style-loader", "css-loader", "sass-loader"]
         },
         {
-          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg|jpg)$/,
-          loader: "url-loader",
+          test: /\.(jpe?g|png|gif|jpg)$/,
+          loader: "file-loader",
+          options: {
+            name: '[name].[ext]',
+          },
           
         }
       ]
