@@ -12,13 +12,10 @@
     "cleanjs": "rm -rf client/public/build/*.js",
     "cleanjson": "rm -rf client/public/build/*.json",
     "removeDocs": "rm -rf client/public/uploads/*.*",
-
     "start": "node fileUploadServer/server.js",
     "server": "nodemon fileUploadServer/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-
-
     "build": "webpack --watch",
     "build:prod": "webpack -p --env production",
     "clientDevServer": "webpack-dev-server --config ./webpack.config.js --mode development",
